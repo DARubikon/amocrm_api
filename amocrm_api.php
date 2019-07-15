@@ -1,9 +1,9 @@
 <?php
 $user=array(
-	'USER_LOGIN'=>'ural.lider174@mail.ru', #Ваш логин (электронная почта)
-	'USER_HASH'=>'42a1b978bce5eb27490312f200b2eaf9a8f0b8a3' #Хэш для доступа к API (смотрите в профиле пользователя)
+	'USER_LOGIN'=>'1', #Ваш логин (электронная почта)
+	'USER_HASH'=>'1' #Хэш для доступа к API (смотрите в профиле пользователя)
 );
-$subdomain='urallider82';
+$subdomain='1';
 $link='https://'.$subdomain.'.amocrm.ru/private/api/auth.php?type=json';
 $curl=curl_init();curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);curl_setopt($curl,CURLOPT_USERAGENT,'amoCRM-API-client/1.0');curl_setopt($curl,CURLOPT_URL,$link);curl_setopt($curl,CURLOPT_POST,true);curl_setopt($curl,CURLOPT_POSTFIELDS,http_build_query($user));curl_setopt($curl,CURLOPT_HEADER,false);curl_setopt($curl,CURLOPT_COOKIEFILE,dirname(__FILE__).'/cookie.txt');curl_setopt($curl,CURLOPT_COOKIEJAR,dirname(__FILE__).'/cookie.txt');curl_setopt($curl,CURLOPT_SSL_VERIFYPEER,0);curl_setopt($curl,CURLOPT_SSL_VERIFYHOST,0);$out=curl_exec($curl);$code=curl_getinfo($curl,CURLINFO_HTTP_CODE);curl_close($curl);
 
